@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Document Portal</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= LOGIN PAGE ================= -->
+
+    <section id="loginPage" class="login-page">
+
+        <div class="login-box">
+
+            <div class="logo">🔐</div>
+
+            <h1>Secure Document Portal</h1>
+
+            <p class="subtitle">
+                AI-Powered Internal Document Search
+            </p>
+
+            <form id="loginForm">
+
+                <label>Email</label>
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <label>Password</label>
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+                <button type="submit" class="primary-btn">
+                    Login
+                </button>
+
+            </form>
+
+            <p class="login-info">
+                Secure access for authorized employees only.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <section id="dashboardPage" class="dashboard hidden">
+
+        <!-- Sidebar -->
+
+        <aside class="sidebar">
+
+            <div class="brand">
+                🔐
+                <span>DocSecure</span>
+            </div>
+
+            <nav>
+
+                <button class="nav-item active">
+                    🏠 Dashboard
+                </button>
+
+                <button class="nav-item">
+                    📄 Documents
+                </button>
+
+                <button class="nav-item">
+                    🤖 AI Search
+                </button>
+
+                <button class="nav-item">
+                    ⚙️ Settings
+                </button>
+
+            </nav>
+
+            <button id="logoutBtn" class="logout-btn">
+                🚪 Logout
+            </button>
+
+        </aside>
+
+
+        <!-- Main Content -->
+
+        <main class="main-content">
+
+            <header class="topbar">
+
+                <div>
+                    <h2>Dashboard</h2>
+                    <p>Welcome to your secure document portal.</p>
+                </div>
+
+                <div class="user">
+                    👤 <span id="userEmail">User</span>
+                </div>
+
+            </header>
+
+
+            <!-- Statistics -->
+
+            <div class="stats">
+
+                <div class="stat-card">
+                    <div class="stat-icon">📄</div>
+                    <div>
+                        <h3 id="documentCount">0</h3>
+                        <p>Documents</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🔍</div>
+                    <div>
+                        <h3>24</h3>
+                        <p>Searches</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">🔐</div>
+                    <div>
+                        <h3>Secure</h3>
+                        <p>Protection</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Upload Section -->
+
+            <section class="card">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Upload Document</h2>
+                        <p>Add a private document to your workspace.</p>
+                    </div>
+                </div>
+
+                <div class="upload-area">
+
+                    <div class="upload-icon">
+                        📤
+                    </div>
+
+                    <h3>Choose a document</h3>
+
+                    <p>
+                        PDF, DOCX or TXT files
+                    </p>
+
+                    <input
+                        type="file"
+                        id="fileInput"
+                        accept=".pdf,.docx,.txt"
+                        hidden
+                    >
+
+                    <label for="fileInput" class="choose-btn">
+                        Choose File
+                    </label>
+
+                    <p id="selectedFile" class="selected-file">
+                        No file selected
+                    </p>
+
+                    <button id="uploadBtn" class="primary-btn upload-btn">
+                        Upload Document
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- Documents -->
+
+            <section class="card">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>Your Documents</h2>
+                        <p>Recently uploaded documents.</p>
+                    </div>
+
+                </div>
+
+                <div id="documentList" class="document-list">
+
+                    <div class="empty-message">
+                        No documents uploaded yet.
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- AI Search -->
+
+            <section class="card ai-card">
+
+                <div class="ai-heading">
+
+                    <div class="ai-icon">
+                        🤖
+                    </div>
+
+                    <div>
+                        <h2>Ask Your Documents</h2>
+                        <p>
+                            Ask questions about your uploaded files.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="chat-box" id="chatBox">
+
+                    <div class="ai-message">
+
+                        <div class="message-icon">
+                            🤖
+                        </div>
+
+                        <div>
+                            <strong>AI Assistant</strong>
+
+                            <p>
+                                Hello! Ask me something about your
+                                documents.
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="question-area">
+
+                    <input
+                        type="text"
+                        id="questionInput"
+                        placeholder="Ask a question about your documents..."
+                    >
+
+                    <button id="askBtn" class="ask-btn">
+                        Ask AI
+                    </button>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </section>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
